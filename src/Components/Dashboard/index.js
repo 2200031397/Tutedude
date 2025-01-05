@@ -22,13 +22,13 @@ const Dashboard = () => {
       }
 
       const [userResponse, filteredUsersResponse, friendsOfFriendsResponse] = await Promise.all([
-        axios.get('http://localhost:3000/api/user/details', {
+        axios.get('https://tutedude-backend-1.onrender.com/api/user/details', {
           headers: { Authorization: `Bearer ${token}` },
         }),
-        axios.get('http://localhost:3000/api/filtered-users', {
+        axios.get('https://tutedude-backend-1.onrender.com/api/filtered-users', {
           headers: { Authorization: `Bearer ${token}` },
         }),
-        axios.get('http://localhost:3000/api/friends-of-friends', {
+        axios.get('https://tutedude-backend-1.onrender.com/api/friends-of-friends', {
           headers: { Authorization: `Bearer ${token}` },
         }),
       ]);
@@ -63,7 +63,7 @@ const Dashboard = () => {
       }
 
       await axios.post(
-        'http://localhost:3000/api/add-friend-request',
+        'https://tutedude-backend-1.onrender.com/api/add-friend-request',
         { friendId: userId },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -83,7 +83,7 @@ const Dashboard = () => {
       }
 
       await axios.post(
-        'http://localhost:3000/api/accept-friend-request',
+        'https://tutedude-backend-1.onrender.com/api/accept-friend-request',
         { friendId },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -103,7 +103,7 @@ const Dashboard = () => {
       }
 
       await axios.post(
-        'http://localhost:3000/api/reject-friend-request',
+        'https://tutedude-backend-1.onrender.com/api/reject-friend-request',
         { friendId },
         { headers: { Authorization: `Bearer ${token}` } }
       );
