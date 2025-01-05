@@ -19,7 +19,7 @@ const Register = () => {
     }
 
     try {
-      await axios.post('http://localhost:3000/api/register', {
+      await axios.post('https://tutedude-backend-1.onrender.com/api/register', {
         name,
         password,
         hobbies: hobbies.split(',').map((hobby) => hobby.trim()),
